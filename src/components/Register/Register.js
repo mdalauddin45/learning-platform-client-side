@@ -10,33 +10,25 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const [error, setError] = useState(" ");
-  const { signin, signInWithGoogle, facebookSignIn, gitHunSignIn } =
+  const { signInWithGoogle, facebookSignIn, gitHunSignIn } =
     useContext(AuthContext);
-
-  //navigate
+  // navigate
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // Log in email password
+  // sign up email password
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    signin(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(from, { replace: true });
-        toast.success("log in succesfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
   };
 
-  // Google Sign in with pop up
+  // icon click to login part
+  // 1. Google Sign in with pop up
   const handleGoogleSignin = () => {
     signInWithGoogle()
       .then((result) => {
@@ -52,7 +44,7 @@ const Register = () => {
       });
   };
 
-  // Facebook Sign in with popup
+  //2. Facebook Sign in with popup
   const handleFacebookSignIn = () => {
     facebookSignIn()
       .then((result) => {
@@ -68,7 +60,7 @@ const Register = () => {
       });
   };
 
-  // Github sign in with pop up
+  // 3.Github sign in with pop up
 
   const handleGithubSignIn = () => {
     gitHunSignIn()
@@ -85,10 +77,18 @@ const Register = () => {
       });
   };
   return (
-    <div className="border rounded p-3 mt-5">
-      <h1 className="fs-1 text-center">Login</h1>
+    <div className="border rounded p-3 mt-5 shadow">
+      <h1 className="fs-1 text-center">Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Text className="text-danger">{error}</Form.Text>
+        <Form.Group className="mb-3">
+          <Form.Label>User Name</Form.Label>
+          <Form.Control type="text" name="name" placeholder="Enter Your Name" />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control type="text" name="photoURL" placeholder="Photo URL" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email" />
@@ -138,10 +138,10 @@ const Register = () => {
         Don't have an account?
         <Link
           rel="noopener noreferrer"
-          to="/register"
+          to="/login"
           className="underline text-gray-100"
         >
-          Sign up
+          Log in
         </Link>
       </p>
     </div>

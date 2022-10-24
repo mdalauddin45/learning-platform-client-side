@@ -86,7 +86,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="border rounded p-3 mt-5">
+      <div className="border rounded p-3 mt-5 shadow">
         <h1 className="fs-1 text-center">Login</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Text className="text-danger">{error}</Form.Text>
