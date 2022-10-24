@@ -5,6 +5,7 @@ import Login from "../components/Login/Login";
 import Courses from "../components/Pages/Courses/Courses";
 import Home from "../components/Pages/Home/Home";
 import Register from "../components/Register/Register";
+
 import Main from "../Layout/Main";
 
 export const router = createBrowserRouter([
