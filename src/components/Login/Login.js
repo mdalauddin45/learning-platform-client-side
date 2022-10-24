@@ -18,6 +18,24 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  // Log in email password
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signin(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+        toast.success("log in succesfully");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   // Google Sign in with pop up
   const handleGoogleSignin = () => {
     signInWithGoogle()
@@ -70,7 +88,7 @@ const Login = () => {
     <div>
       <div className="border rounded p-3 mt-5">
         <h1 className="fs-1 text-center">Login</h1>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Text className="text-danger">{error}</Form.Text>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
