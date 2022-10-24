@@ -1,9 +1,78 @@
 import React from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import { AuthContext } from "../../contexts/UserContext";
+
+import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [error, setError] = useState(" ");
+  const { signin } = useContext(AuthContext);
   return (
     <div>
-      <h1>this is login</h1>
+      <div className="border rounded p-3 mt-5">
+        <h1 className="fs-1 text-center">Login</h1>
+        <Form>
+          <Form.Text className="text-danger">{error}</Form.Text>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" name="email" placeholder="Enter email" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Log in
+          </Button>
+        </Form>
+        <div className="text-center">
+          <p>Login with social accounts</p>
+        </div>
+        <div className="text-center">
+          <button className="me-2">
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/640px-Facebook_f_logo_%282021%29.svg.png"
+              alt=""
+              width="30"
+              height="30"
+            />
+          </button>
+          <button className="me-2">
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+              alt=""
+              width="30"
+              height="30"
+            />
+          </button>
+          <button className="me-2">
+            <Image
+              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+              alt=""
+              width="30"
+              height="30"
+            />
+          </button>
+        </div>
+        <p className="text-xs text-center sm:px-6 text-gray-400">
+          Don't have an account?
+          <Link
+            rel="noopener noreferrer"
+            to="/register"
+            className="underline text-gray-100"
+          >
+            Sign up
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
