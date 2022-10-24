@@ -33,14 +33,24 @@ const Register = () => {
         console.log(user);
         form.reset();
         setError("");
-        handleUpdateUserProfile(name, photoURL);
+        handleUpdateProfile(name, photoURL);
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
   };
-
+  const handleUpdateProfile = () => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateProfile(profile)
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   // icon click to login part
   // 1. Google Sign in with pop up
   const handleGoogleSignin = () => {

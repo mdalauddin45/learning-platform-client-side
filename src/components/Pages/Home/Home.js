@@ -4,7 +4,7 @@ import CourseSummary from "../Shared/CourseSummary/CourseSummary";
 
 const Home = () => {
   const courses = useLoaderData();
-  console.log(courses);
+  // console.log(courses);
   return (
     <div>
       <h1>Our Total Coures: {courses.length} </h1>

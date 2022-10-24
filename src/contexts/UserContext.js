@@ -34,7 +34,7 @@ const UserContext = ({ children }) => {
 
   //   2. Update Name
 
-  const updateName = (name) => {
+  const handleUpdateProfile = (name) => {
     setLoading(true);
     return updateProfile(auth.currentUser, { displayName: name });
   };
@@ -105,6 +105,7 @@ const UserContext = ({ children }) => {
     loading,
     facebookSignIn,
     gitHunSignIn,
+    handleUpdateProfile,
   };
 
   return (
