@@ -19,7 +19,6 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
-      <Footer></Footer>
     </div>
   );
 };
