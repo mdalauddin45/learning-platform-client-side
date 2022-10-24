@@ -23,6 +23,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link to="/courses">Courses</Nav.Link>
             <Nav.Link to="/faq">FAQ</Nav.Link>
+            <Nav.Link to="/blog">Blog</Nav.Link>
           </Nav>
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
