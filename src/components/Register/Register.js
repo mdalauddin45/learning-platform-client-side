@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const [error, setError] = useState(" ");
-  const { signInWithGoogle, facebookSignIn, gitHunSignIn } =
+  const { signInWithGoogle, facebookSignIn, gitHunSignIn, createUser } =
     useContext(AuthContext);
   // navigate
   const navigate = useNavigate();
@@ -25,6 +25,20 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    // user name and profile update
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        setError("");
+        handleUpdateUserProfile(name, photoURL);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
   };
 
   // icon click to login part
@@ -102,7 +116,7 @@ const Register = () => {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Log in
+          Sign up
         </Button>
       </Form>
       <div className="text-center">
