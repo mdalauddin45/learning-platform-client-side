@@ -2,15 +2,70 @@ import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../contexts/UserContext";
-
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [error, setError] = useState(" ");
-  const { signin } = useContext(AuthContext);
+  const { signin, signInWithGoogle, facebookSignIn, gitHunSignIn } =
+    useContext(AuthContext);
+
+  //navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  // Google Sign in with pop up
+  const handleGoogleSignin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Sign up Succesfuly");
+        navigate(from, { replace: true });
+      })
+
+      .catch((error) => {
+        console.error(error);
+        toast.error("Sign up not Succesfuly!! Pleace try again");
+      });
+  };
+
+  // Facebook Sign in with popup
+  const handleFacebookSignIn = () => {
+    facebookSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Sign up Succesfuly");
+        navigate(from, { replace: true });
+      })
+
+      .catch((error) => {
+        console.error(error);
+        toast.error("Sign up not Succesfuly!! Pleace try again");
+      });
+  };
+
+  // Github sign in with pop up
+
+  const handleGithubSignIn = () => {
+    gitHunSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Sign up Succesfuly");
+        navigate(from, { replace: true });
+      })
+
+      .catch((error) => {
+        console.error(error);
+        toast.error("Sign up not Succesfuly!! Pleace try again");
+      });
+  };
   return (
     <div>
       <div className="border rounded p-3 mt-5">
@@ -37,7 +92,7 @@ const Login = () => {
           <p>Login with social accounts</p>
         </div>
         <div className="text-center">
-          <button className="me-2">
+          <button onClick={handleFacebookSignIn} className="me-2">
             <Image
               src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/640px-Facebook_f_logo_%282021%29.svg.png"
               alt=""
@@ -45,7 +100,7 @@ const Login = () => {
               height="30"
             />
           </button>
-          <button className="me-2">
+          <button onClick={handleGoogleSignin} className="me-2">
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
               alt=""
@@ -53,7 +108,7 @@ const Login = () => {
               height="30"
             />
           </button>
-          <button className="me-2">
+          <button onClick={handleGithubSignIn} className="me-2">
             <Image
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
               alt=""
