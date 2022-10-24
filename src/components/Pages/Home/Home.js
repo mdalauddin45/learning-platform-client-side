@@ -8,9 +8,12 @@ const Home = () => {
   return (
     <div>
       <h1>Our Total Coures: {courses.length} </h1>
-      {courses.map((course) => {
-        <CourseSummary key={course.id} course={course}></CourseSummary>;
-      })}
+
+      <div className="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+        {courses.map((course) => (
+          <CourseSummary key={course.id} course={course}></CourseSummary>
+        ))}
+      </div>
     </div>
   );
 };

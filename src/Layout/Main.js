@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
+
 import Header from "../components/Header/Header";
 import LeftSideNav from "../components/Pages/Shared/LeftSideNav/LeftSideNav";
 import { Col, Container, Row } from "react-bootstrap";
