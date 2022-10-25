@@ -113,7 +113,11 @@ const Register = () => {
   };
   return (
     <div className="border rounded p-3 mt-5 shadow col-md-6">
-      <h1 className="fs-1 text-center">Sign Up</h1>
+      <h1 className="fs-1 text-center">Register</h1>
+      <p>
+        <span className="text-success">Welcome!</span> Please confirm that you
+        are visiting
+      </p>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>User Name</Form.Label>
