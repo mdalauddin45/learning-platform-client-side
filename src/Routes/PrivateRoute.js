@@ -7,7 +7,9 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   if (loading) {
-    return <Spinner animation="border" variant="success" />;
+    return (
+      <Spinner className="text-center" animation="border" variant="success" />
+    );
   }
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
