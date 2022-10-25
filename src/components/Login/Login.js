@@ -7,9 +7,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import ForgetPassword from "../ForgetPassword/ForgetPassword";
 
 const Login = () => {
   const [error, setError] = useState(" ");
+  const [modalShow, setModalShow] = useState(false);
   const { signin, signInWithGoogle, facebookSignIn, gitHunSignIn } =
     useContext(AuthContext);
 
@@ -33,7 +35,7 @@ const Login = () => {
         toast.success("log in succesfully");
       })
       .catch((error) => {
-        toast.error(error.message);
+        console.error(error);
       });
   };
 
@@ -85,6 +87,7 @@ const Login = () => {
         toast.error("Sign up not Succesfuly!! Pleace try again");
       });
   };
+
   return (
     <div className="col-md-6">
       <div className="row d-flex justify-content-center">
@@ -108,9 +111,21 @@ const Login = () => {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Log in
-            </Button>
+            <div className="d-flex justify-content-between">
+              <div>
+                <Button variant="primary" type="submit">
+                  Log in
+                </Button>
+              </div>
+              <div>
+                <button
+                  onClick={() => setModalShow(true)}
+                  className="btn btn-link"
+                >
+                  Forgot password?
+                </button>
+              </div>
+            </div>
           </Form>
           <div className="text-center">
             <p>Login with social accounts</p>
@@ -152,6 +167,10 @@ const Login = () => {
             </Link>
           </p>
         </div>
+        <ForgetPassword
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        ></ForgetPassword>
       </div>
     </div>
   );
