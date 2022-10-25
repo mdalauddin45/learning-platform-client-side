@@ -1,7 +1,15 @@
 .category {
   padding: 10px;
+  background-color: #ffffff;
+  border: 0px solid gray;
+  height: 94%;
+  margin-top: 45px;
 }
 .category a {
   text-decoration: none;
   color: gray;
+}
+
+.item a:hover {
+  color: green;
 }

@@ -8,7 +8,7 @@ const Courses = () => {
   console.log(singleCourse);
   const { description, image, Lecturer, title, category } = singleCourse;
   return (
-    <Card className="shadow">
+    <Card className="shadow mt-5">
       <Card.Img variant="top" src={image} style={{ height: "400px" }} />
       <Card.Body>
         <Card.Title>{title} </Card.Title>

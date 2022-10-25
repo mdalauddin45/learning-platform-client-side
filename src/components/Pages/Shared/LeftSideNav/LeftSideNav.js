@@ -14,11 +14,11 @@ const LeftSideNav = () => {
   }, []);
   // console.log(categories);
   return (
-    <div className="category">
+    <div className="category shadow">
       <h5>Our Coureses</h5>
       <div className="sidenav-item">
         {categories?.map((category) => (
-          <p key={category.id}>
+          <p className="item" key={category.id}>
             <Link to={`/courses/${category.id}`}>{category.name}</Link>
           </p>
         ))}
