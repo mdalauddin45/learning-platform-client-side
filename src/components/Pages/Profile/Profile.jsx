@@ -7,7 +7,7 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="col-md-6 text-center me-auto mt-5 shadow rounded">
+    <div className="col-md-6 text-center me-auto mt-5 shadow rounded card-hover">
       <h1>User profile</h1>
       <div className="card-body text-center  mt-4 mb-4 rounded p-4 ">
         <div>
@@ -15,6 +15,7 @@ const Profile = () => {
             src={user?.photoURL ? user.photoURL : <FaUserCircle></FaUserCircle>}
             referrerPolicy="no-referrer"
             alt=""
+            width="150"
             className="rounded-circle shadow-1 mb-3"
           />
         </div>

@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import LeftSideNav from "../Pages/Shared/LeftSideNav/LeftSideNav";
 import Image from "react-bootstrap/Image";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 import { toast } from "react-toastify";
@@ -14,10 +14,16 @@ function Header() {
   const { user, logout } = useContext(AuthContext);
   // console.log(user);
 
+  //navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   //log out
   const handleLogOut = () => {
     logout()
       .then(() => {
+        navigate(from, { replace: true });
         toast.warning("log out successfuly");
       })
       .catch((error) => {
