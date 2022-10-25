@@ -10,8 +10,14 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const [error, setError] = useState(" ");
-  const { signInWithGoogle, facebookSignIn, gitHunSignIn, createUser } =
-    useContext(AuthContext);
+  const {
+    signInWithGoogle,
+    facebookSignIn,
+    gitHunSignIn,
+    createUser,
+    updateName,
+    verifyEmail,
+  } = useContext(AuthContext);
   // navigate
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,32 +31,37 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-
-    // user name and profile update
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
         form.reset();
         setError("");
-        handleUpdateProfile(name, photoURL);
+
+        // Update Name
+        updateName(name)
+          .then(() => {
+            toast.success("your name updated");
+
+            //Email Verification
+
+            verifyEmail()
+              .then(() => {
+                toast.success("Please check your email for verification link");
+                navigate(from, { replace: true });
+              })
+              .catch((error) => {
+                toast.error(error.message);
+              });
+          })
+          .catch((error) => console.error(error));
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
   };
-  const handleUpdateProfile = () => {
-    const profile = {
-      displayName: name,
-      photoURL: photoURL,
-    };
-    updateProfile(profile)
-      .then(() => {})
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+
   // icon click to login part
   // 1. Google Sign in with pop up
   const handleGoogleSignin = () => {
