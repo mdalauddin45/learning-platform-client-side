@@ -53,7 +53,7 @@ function Header() {
           </Nav>
           {user?.photoURL ? (
             <div className="ms-4 d-flex">
-              <Link title={user.displayName}>
+              <Link to="/profile" title={user.displayName}>
                 <Image
                   className="mt-2 mb-2 me-2"
                   style={{ height: "30px" }}
