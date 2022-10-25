@@ -1,0 +1,7 @@
+.category {
+  padding: 10px;
+}
+.category a {
+  text-decoration: none;
+  color: gray;
+}
