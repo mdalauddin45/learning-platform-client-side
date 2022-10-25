@@ -39,7 +39,7 @@ const Register = () => {
         setError("");
 
         // Update Name
-        updateName(name)
+        updateName(name, photoURL)
           .then(() => {
             toast.success("your name updated");
 

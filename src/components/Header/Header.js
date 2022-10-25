@@ -5,8 +5,25 @@ import Navbar from "react-bootstrap/Navbar";
 import LeftSideNav from "../Pages/Shared/LeftSideNav/LeftSideNav";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/UserContext";
+import { toast } from "react-toastify";
 
 function Header() {
+  const { user, logout } = useContext(AuthContext);
+  console.log(user);
+
+  //log out
+  const handleLogOut = () => {
+    logout()
+      .then(() => {
+        toast.warning("log out successfuly");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -27,6 +44,7 @@ function Header() {
             <Link to="/blog">Blog</Link>
             <Link to="/login">Login</Link>
           </Nav>
+          <button onClick={handleLogOut}>Log out</button>
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
           </div>
