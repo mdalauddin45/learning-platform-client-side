@@ -39,33 +39,39 @@ function Header() {
         <Navbar.Brand to="/">BGC Tech</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Link to="/courses">Courses</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/blog">Blog</Link>
+          <Nav className="me-auto"></Nav>
+          <Nav className="ms-4">
+            <Link className="me-4" to="/courses">
+              Courses
+            </Link>
+            <Link className="me-4" to="/faq">
+              FAQ
+            </Link>
+            <Link className="me-4" to="/blog">
+              Blog
+            </Link>
+            {user?.photoURL ? (
+              <>
+                <Image
+                  level={user.displayName}
+                  style={{ height: "30px" }}
+                  roundedCircle
+                  src={user?.photoURL}
+                ></Image>
+                <Button variant="warning" onClick={handleLogOut}>
+                  Log out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="primary">
+                  <Link className="text-white " to="/login">
+                    Login
+                  </Link>
+                </Button>
+              </>
+            )}
           </Nav>
-
-          {user?.photoURL ? (
-            <>
-              <Image
-                level={user.displayName}
-                style={{ height: "30px" }}
-                roundedCircle
-                src={user?.photoURL}
-              ></Image>
-              <Button variant="warning" onClick={handleLogOut}>
-                Log out
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button variant="primary">
-                <Link className="text-white" to="/login">
-                  Login
-                </Link>
-              </Button>
-            </>
-          )}
 
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
