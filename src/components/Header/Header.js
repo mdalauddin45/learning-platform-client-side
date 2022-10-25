@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 import { toast } from "react-toastify";
+import Button from "react-bootstrap/Button";
 
 function Header() {
   const { user, logout } = useContext(AuthContext);
@@ -26,7 +27,7 @@ function Header() {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
+      <Container className="nav">
         <Link to="/">
           <Image
             className="border rounded"
@@ -42,9 +43,30 @@ function Header() {
             <Link to="/courses">Courses</Link>
             <Link to="/faq">FAQ</Link>
             <Link to="/blog">Blog</Link>
-            <Link to="/login">Login</Link>
           </Nav>
-          <button onClick={handleLogOut}>Log out</button>
+
+          {user?.photoURL ? (
+            <>
+              <Image
+                level={user.displayName}
+                style={{ height: "30px" }}
+                roundedCircle
+                src={user?.photoURL}
+              ></Image>
+              <Button variant="warning" onClick={handleLogOut}>
+                Log out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="primary">
+                <Link className="text-white" to="/login">
+                  Login
+                </Link>
+              </Button>
+            </>
+          )}
+
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
           </div>
