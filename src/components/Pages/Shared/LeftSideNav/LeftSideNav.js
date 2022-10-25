@@ -16,7 +16,7 @@ const LeftSideNav = () => {
   return (
     <div className="category">
       <h5>Our Coureses</h5>
-      <div className="">
+      <div className="sidenav-item">
         {categories?.map((category) => (
           <p key={category.id}>
             <Link to={`/category/${category.id}`}>{category.name}</Link>
