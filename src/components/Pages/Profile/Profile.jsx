@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaGithubSquare, FaTwitterSquare, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../../contexts/UserContext";
 import { Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -41,7 +43,17 @@ const Profile = () => {
               </span>
             )}
           </p>
-          <p> ID: {user?.uid}</p>
+          <div className="fs-1">
+            <Link className="text-decoration-none text-black">
+              <FaFacebookSquare />
+            </Link>
+            <Link className="text-black">
+              <FaTwitterSquare />
+            </Link>
+            <Link className="text-black">
+              <FaGithubSquare />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
