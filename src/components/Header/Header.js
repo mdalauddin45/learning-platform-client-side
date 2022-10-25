@@ -30,7 +30,7 @@ function Header() {
       <Container className="nav">
         <Link to="/">
           <Image
-            className="border rounded me-2"
+            className="border rounded me-2 ms-4"
             src="https://elearningindustry.com/wp-content/uploads/2015/05/Online-Learning-Teaching-Techniques.jpg"
             width="30"
             height="30"
@@ -50,28 +50,30 @@ function Header() {
             <Link className="me-4" to="/blog">
               Blog
             </Link>
-            {user?.photoURL ? (
-              <>
-                <Image
-                  level={user.displayName}
-                  style={{ height: "30px" }}
-                  roundedCircle
-                  src={user?.photoURL}
-                ></Image>
-                <Button variant="warning" onClick={handleLogOut}>
-                  Log out
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="primary">
-                  <Link className="text-white " to="/login">
-                    Login
-                  </Link>
-                </Button>
-              </>
-            )}
           </Nav>
+          {user?.photoURL ? (
+            <div className="ms-4 ">
+              <Image
+                className="mt-2 mb-2"
+                level={user.displayName}
+                style={{ height: "30px" }}
+                roundedCircle
+                src={user?.photoURL}
+              ></Image>{" "}
+              <br />
+              <Button variant="warning" onClick={handleLogOut}>
+                Log out
+              </Button>
+            </div>
+          ) : (
+            <>
+              <Button className="ms-4 mt-2 mb-2" variant="primary">
+                <Link className="text-white" to="/login">
+                  Login
+                </Link>
+              </Button>
+            </>
+          )}
 
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
