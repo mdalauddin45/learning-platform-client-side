@@ -4,6 +4,7 @@ import Header from "../components/Header/Header";
 import LeftSideNav from "../components/Pages/Shared/LeftSideNav/LeftSideNav";
 import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };
