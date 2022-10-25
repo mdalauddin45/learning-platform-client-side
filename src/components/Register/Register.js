@@ -115,7 +115,6 @@ const Register = () => {
     <div className="border rounded p-3 mt-5 shadow">
       <h1 className="fs-1 text-center">Sign Up</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Text className="text-danger">{error}</Form.Text>
         <Form.Group className="mb-3">
           <Form.Label>User Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Enter Your Name" />
@@ -136,6 +135,7 @@ const Register = () => {
             placeholder="Password"
           />
         </Form.Group>
+        <Form.Text className="text-danger">{error}</Form.Text> <br />
         <Button variant="primary" type="submit">
           Sign up
         </Button>
