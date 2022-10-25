@@ -15,6 +15,7 @@ const LeftSideNav = () => {
   // console.log(categories);
   return (
     <div className="category">
+      <h5>Our Coureses</h5>
       <div className="">
         {categories?.map((category) => (
           <p key={category.id}>
