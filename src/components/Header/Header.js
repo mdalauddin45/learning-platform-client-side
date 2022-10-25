@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 
 function Header() {
   const { user, logout } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   //log out
   const handleLogOut = () => {

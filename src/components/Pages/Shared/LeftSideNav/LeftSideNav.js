@@ -1,9 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const LeftSideNav = () => {
-  // const courses = useLoaderData();
-  // console.log(courses);
+  const [categories, setCategories] = useState();
   return (
     <div>
       <h1>Our Total Courses </h1>
