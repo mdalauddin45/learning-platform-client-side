@@ -1,16 +1,23 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import CourseSummary from "../Shared/CourseSummary/CourseSummary";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
 const Courses = () => {
-  const allCourses = useLoaderData();
+  const singleCourse = useLoaderData();
+  console.log(singleCourse);
+  const { description, image, price, title, category } = singleCourse;
   return (
-    <div>
-      <div className="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4 mt-4">
-        {allCourses.map((course) => (
-          <CourseSummary key={course.id} course={course}></CourseSummary>
-        ))}
-      </div>
-    </div>
+    <Card className="shadow">
+      <Card.Img variant="top" src={image} style={{ height: "400px" }} />
+      <Card.Body>
+        <Card.Title>{title} </Card.Title>
+        <Card.Text>price: {price}$</Card.Text>
+        <Card.Text>{category}</Card.Text>
+        <Card.Text>{description}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
   );
 };
 
