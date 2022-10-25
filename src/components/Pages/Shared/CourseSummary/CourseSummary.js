@@ -7,7 +7,7 @@ const CourseSummary = ({ course }) => {
   const { image, title, price, id } = course;
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="shadow">
         <Card.Img variant="top" src={image} style={{ height: "200px" }} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>

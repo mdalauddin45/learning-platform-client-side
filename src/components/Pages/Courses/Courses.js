@@ -15,7 +15,7 @@ const Courses = () => {
         <Card.Text>price: {price}$</Card.Text>
         <Card.Text>{category}</Card.Text>
         <Card.Text>{description}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">check Out</Button>
       </Card.Body>
     </Card>
   );
