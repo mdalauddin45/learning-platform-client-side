@@ -26,7 +26,7 @@ function Header() {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="shadow mb-2">
       <Container className="nav">
         <Link to="/">
           <Image
@@ -52,14 +52,15 @@ function Header() {
             </Link>
           </Nav>
           {user?.photoURL ? (
-            <div className="ms-4 ">
-              <Image
-                className="mt-2 mb-2"
-                level={user.displayName}
-                style={{ height: "30px" }}
-                roundedCircle
-                src={user?.photoURL}
-              ></Image>{" "}
+            <div className="ms-4 d-flex">
+              <Link title={user.displayName}>
+                <Image
+                  className="mt-2 mb-2 me-2"
+                  style={{ height: "30px" }}
+                  roundedCircle
+                  src={user?.photoURL}
+                ></Image>
+              </Link>
               <br />
               <Button variant="warning" onClick={handleLogOut}>
                 Log out

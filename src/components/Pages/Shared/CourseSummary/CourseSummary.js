@@ -10,7 +10,7 @@ const CourseSummary = ({ course }) => {
         <Card.Img variant="top" src={image} style={{ height: "200px" }} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{price}</Card.Text>
+          <Card.Text>Price: {price}$</Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
