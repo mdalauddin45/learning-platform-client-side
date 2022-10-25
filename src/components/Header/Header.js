@@ -30,7 +30,7 @@ function Header() {
       <Container className="nav">
         <Link to="/">
           <Image
-            className="border rounded"
+            className="border rounded me-2"
             src="https://elearningindustry.com/wp-content/uploads/2015/05/Online-Learning-Teaching-Techniques.jpg"
             width="30"
             height="30"
