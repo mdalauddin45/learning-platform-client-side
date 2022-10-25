@@ -13,10 +13,10 @@ const LeftSideNav = () => {
   }, []);
   // console.log(categories);
   return (
-    <div className="mt-2 nav">
+    <div className="mt-2 ">
       <div>
         {categories?.map((category) => (
-          <p key={category.id}>
+          <p className=" text-red" key={category.id}>
             <Link to={`/category/${category.id}`}>{category.name}</Link>
           </p>
         ))}
