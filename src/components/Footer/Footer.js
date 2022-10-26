@@ -4,8 +4,8 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="text-center text-lg-start  text-muted mt-4 foooter">
-      <div className="navimg">
+    <div className="text-center text-lg-start  text-muted mt-5 foooter">
+      <div className="navimg mt-5">
         <h1>Ready to get started?</h1>
         <p>
           Replenish him third creature and meat blessed void a fruit gathered{" "}
