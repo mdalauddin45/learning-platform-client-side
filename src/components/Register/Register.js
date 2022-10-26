@@ -112,77 +112,109 @@ const Register = () => {
       });
   };
   return (
-    <div className="border rounded p-3 mt-5 shadow col-md-6">
-      <h1 className="fs-1 text-center">Register</h1>
-      <p className="text-center fs-5">
-        <span className="text-success">Welcome!</span> Please confirm that you
-        are visiting
-      </p>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>User Name</Form.Label>
-          <Form.Control type="text" name="name" placeholder="Enter Your Name" />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Photo URL</Form.Label>
-          <Form.Control type="text" name="photoURL" placeholder="Photo URL" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name="email" placeholder="Enter email" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="password"
-            placeholder="Password"
-          />
-        </Form.Group>
-        <Form.Text className="text-danger">{error}</Form.Text> <br />
-        <Button variant="primary" type="submit">
-          Sign up
-        </Button>
-      </Form>
-      <div className="text-center">
-        <p>Login with social accounts</p>
+    <div className="d-flex">
+      <div className="d-none d-lg-block ">
+        <img
+          className="m-5"
+          src="https://phitron.io/static/media/register.e58071de.png"
+          alt=""
+        />
       </div>
-      <div className="text-center">
-        <button onClick={handleFacebookSignIn} className="me-2 border rounded">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/640px-Facebook_f_logo_%282021%29.svg.png"
-            alt=""
-            width="30"
-            height="30"
-          />
-        </button>
-        <button onClick={handleGoogleSignin} className="me-2 border rounded">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
-            alt=""
-            width="30"
-            height="30"
-          />
-        </button>
-        <button onClick={handleGithubSignIn} className="me-2 border rounded">
-          <Image
-            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-            alt=""
-            width="30"
-            height="30"
-          />
-        </button>
+      <div className="border rounded p-3 mt-5 shadow col-md-6">
+        <div>
+          <h1 className="fs-1 text-center">Register</h1>
+          <p className="text-center fs-5">
+            <span className="text-success">Welcome!</span> Please confirm that
+            you are visiting
+          </p>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label>User Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Photo URL</Form.Label>
+              <Form.Control
+                type="text"
+                name="photoURL"
+                placeholder="Photo URL"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter email"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </Form.Group>
+            <Form.Text className="text-danger">{error}</Form.Text> <br />
+            <Button variant="primary" type="submit">
+              Sign up
+            </Button>
+          </Form>
+          <div className="text-center">
+            <p>Login with social accounts</p>
+          </div>
+          <div className="text-center">
+            <button
+              onClick={handleFacebookSignIn}
+              className="me-2 border rounded"
+            >
+              <Image
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/640px-Facebook_f_logo_%282021%29.svg.png"
+                alt=""
+                width="30"
+                height="30"
+              />
+            </button>
+            <button
+              onClick={handleGoogleSignin}
+              className="me-2 border rounded"
+            >
+              <Image
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+                alt=""
+                width="30"
+                height="30"
+              />
+            </button>
+            <button
+              onClick={handleGithubSignIn}
+              className="me-2 border rounded"
+            >
+              <Image
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt=""
+                width="30"
+                height="30"
+              />
+            </button>
+          </div>
+          <p className="text-xs text-center sm:px-6 text-gray-400">
+            Don't have an account?
+            <Link
+              rel="noopener noreferrer"
+              to="/login"
+              className="underline text-gray-100"
+            >
+              Log in
+            </Link>
+          </p>
+        </div>
       </div>
-      <p className="text-xs text-center sm:px-6 text-gray-400">
-        Don't have an account?
-        <Link
-          rel="noopener noreferrer"
-          to="/login"
-          className="underline text-gray-100"
-        >
-          Log in
-        </Link>
-      </p>
     </div>
   );
 };

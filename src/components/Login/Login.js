@@ -89,8 +89,15 @@ const Login = () => {
   };
 
   return (
-    <div className="col-md-6">
-      <div className="row d-flex justify-content-center">
+    <div className="d-flex">
+      <div className="d-none d-lg-block">
+        <img
+          className="m-5 "
+          src="https://phitron.io/static/media/login.60b00691.png"
+          alt=""
+        />
+      </div>
+      <div className="row d-flex justify-content-center w-100">
         <div className="border rounded p-3 mt-5 shadow ">
           <h1 className="fs-1 text-center">Login</h1>
           <Form onSubmit={handleSubmit}>

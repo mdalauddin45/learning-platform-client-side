@@ -15,9 +15,11 @@ const CourseSummary = ({ course }) => {
             <p className="text-secondary">Lecturer: {Lecturer}</p>
             <p className="text-success">Hours: {Hours}</p>
           </div>
-          <button className="btn">
-            <Link to={`/courses/${id}`}>Get premium access</Link>
-          </button>
+          <div className="buttons-boxs">
+            <Link className="premium-btn" to={`/courses/${id}`}>
+              Get premium access
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </div>
