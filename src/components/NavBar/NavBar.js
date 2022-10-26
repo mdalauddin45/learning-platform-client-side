@@ -73,17 +73,25 @@ const NavBar = ({ switchTheme }) => {
                     Blog
                   </Link>
                   {user?.photoURL ? (
-                    <div>
-                      <Link to="/profile" title={user.displayName}>
-                        <Image
-                          className="m-2"
-                          style={{ height: "30px" }}
-                          roundedCircle
-                          src={user?.photoURL}
-                        ></Image>
-                      </Link>
-
-                      <Link onClick={handleLogOut}>Log out</Link>
+                    <div className="d-lg-flex">
+                      <div>
+                        <Link to="/profile" title={user.displayName}>
+                          <Image
+                            className="m-2"
+                            style={{ height: "40px" }}
+                            roundedCircle
+                            src={user?.photoURL}
+                          ></Image>
+                        </Link>
+                      </div>
+                      <div className="">
+                        <button
+                          className="premium-btn border-none logOut"
+                          onClick={handleLogOut}
+                        >
+                          Log out
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <>

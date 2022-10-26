@@ -56,5 +56,7 @@
 .fotter {
   background-image: url("https://demo.auburnforest.com/html/bootcamp/bootcamp/images/icons/icon-1.png");
   background-repeat: no-repeat;
-  position: absolute;
+  position: relative;
+  background-size: auto;
+  background-position-x: right;
 }

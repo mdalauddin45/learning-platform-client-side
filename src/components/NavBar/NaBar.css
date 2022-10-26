@@ -24,3 +24,7 @@
 .allNav:hover {
   color: #00ab15;
 }
+.logOut {
+  text-decoration: none;
+  border: 0px;
+}

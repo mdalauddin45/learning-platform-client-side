@@ -14,10 +14,18 @@ const Courses = () => {
         <Card.Text>Lecturer: {Lecturer}</Card.Text>
         <Card.Text>{category}</Card.Text>
         <Card.Text>{description}</Card.Text>
-        <div className="buttons-boxs">
-          <Link className="buttons-box" to={`/checkout/${id}`}>
-            <span className="fs-5">check Out</span>
-          </Link>
+        <div className="d-flex justify-content-between">
+          {" "}
+          <div className="buttons-boxs">
+            <Link className="buttons-box" to={`/checkout/${id}`}>
+              <span className="fs-5">check Out</span>
+            </Link>
+          </div>
+          <div className="buttons-boxs">
+            <Link className="buttons-box">
+              <span className="fs-5">Pdf</span>
+            </Link>
+          </div>
         </div>
       </Card.Body>
     </Card>
