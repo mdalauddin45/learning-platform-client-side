@@ -1,12 +1,12 @@
 .c-title:hover {
-  color: green;
+  color: #00ab15;
 }
 
 .btn a {
   text-decoration: none;
   border-radius: 5px;
   padding: 5px 10px;
-  background-color: green;
+  background-color: #00ab15;
   color: white;
   font-size: 15px;
   font-weight: 600;

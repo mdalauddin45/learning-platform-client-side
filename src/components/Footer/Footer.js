@@ -1,13 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="text-center text-lg-start bg-light text-muted mt-4">
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div className="me-5 d-none d-lg-block">
-          <span>Get connected with us on social networks:</span>
+    <div className="text-center text-lg-start  text-muted mt-4 foooter">
+      <div className="navimg">
+        <h1>Ready to get started?</h1>
+        <p>
+          Replenish him third creature and meat blessed void a fruit gathered{" "}
+          <br />
+          you’re, they’re two waters own morning gathered greater shall had
+          behold had seed.
+        </p>
+        <div className="buttons-boxs">
+          <Link to="/" className="buttons-box">
+            Get Stared{" "}
+          </Link>
+          <Link to="/" className="buttons-box">
+            All Courses{" "}
+          </Link>
         </div>
+      </div>
+      <section className="d-flex justify-content-center justify-content-lg-between p-4 ">
         <div>
           <Link to="" className="me-4 text-reset">
             <i className="fab fa-facebook-f"></i>
@@ -30,12 +45,20 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="">
+      <section className="fotter">
         <div className="container text-center text-md-start mt-5">
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
-                <i className="fas fa-gem me-3"></i>BGC Tech
+              <h6 className="text-uppercase fw-bold mb-4 fs-3">
+                <i className="fas fa-gem me-3 ">
+                  <img
+                    src="https://demo.auburnforest.com/html/bootcamp/bootcamp/images/main-slider/content-image.png"
+                    alt=""
+                    height="50px"
+                  />
+                </i>
+                <span className="text-black"> BGC</span>
+                <span className="tech"> Tech</span>
               </h6>
               <p>
                 Welcome to BGC Tech, a dynamic online platfrom for higher

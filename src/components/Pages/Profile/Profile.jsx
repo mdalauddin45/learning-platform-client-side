@@ -44,7 +44,7 @@ const Profile = () => {
             )}
           </p>
           <div className="fs-1">
-            <Link to="" className="text-decoration-none text-black">
+            <Link className="text-decoration-none text-black ">
               <FaFacebookSquare />
             </Link>
             <Link className="text-black">

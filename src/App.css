@@ -2,7 +2,10 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.all {
+  background-color: #f0f5fb;
+  background-image: url("https://demo.auburnforest.com/html/bootcamp/bootcamp/images/background/pattern-3.png");
+}
 .nav a {
   font-size: 20px;
   text-decoration: none;

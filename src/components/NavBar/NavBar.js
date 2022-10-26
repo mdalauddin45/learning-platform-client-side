@@ -35,17 +35,16 @@ const NavBar = () => {
       {["lg"].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid>
-            <Link to="/">
+            <Link to="/" className="ms-2 me-2">
               <Image
-                className="border rounded me-2 ms-4"
-                src="https://elearningindustry.com/wp-content/uploads/2015/05/Online-Learning-Teaching-Techniques.jpg"
-                width="40"
-                height="40"
+                src="https://demo.auburnforest.com/html/bootcamp/bootcamp/images/main-slider/content-image.png"
+                alt=""
+                height="50px"
               />
             </Link>
             <Navbar.Brand to="/" className="fw-bold fs-1">
               <span className="text-white"> BGC</span>
-              <span className="text-success"> Tech</span>
+              <span className="tech"> Tech</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

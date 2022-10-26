@@ -1,0 +1,42 @@
+.foooter {
+  background-color: #f0f5fb;
+  color: #777777;
+}
+.navimg {
+  background-image: url("https://demo.auburnforest.com/html/bootcamp/bootcamp/images/background/3.png");
+  position: relative;
+  text-align: center;
+  padding: 100px 0px 90px;
+  background-size: cover;
+  background-color: #f0f5fb;
+  background-position: center top;
+  color: white;
+}
+.buttons-boxs a {
+  text-decoration: none;
+}
+.buttons-box {
+  margin: 0px 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 10px 44px 10px;
+  font-weight: 400;
+  overflow: hidden;
+  background: none;
+  border-radius: 50px;
+  background-color: #00ab15;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 5px 10px rgb(0 0 0 / 10%);
+}
+.buttons-box:hover {
+  color: #f0f5fb;
+}
+.fotter {
+  background-image: url("https://demo.auburnforest.com/html/bootcamp/bootcamp/images/icons/icon-1.png");
+  background-repeat: no-repeat;
+  position: absolute;
+}

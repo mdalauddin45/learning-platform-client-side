@@ -1,5 +1,5 @@
 .nab {
-  background-color: black;
+  background-color: rgb(30, 101, 163);
   color: white;
   height: 82px;
 }
@@ -9,16 +9,18 @@
   font-size: 20px;
 }
 .nab a:hover {
-  color: green;
+  color: #00ab15;
 }
-
+.tech {
+  color: #00ab15;
+}
 .allNav a {
   text-decoration: none;
   font-size: 20px;
 }
 .allNav a:hover {
-  color: green;
+  color: #00ab15;
 }
 .allNav:hover {
-  color: green;
+  color: #00ab15;
 }
