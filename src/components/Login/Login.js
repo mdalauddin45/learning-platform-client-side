@@ -14,7 +14,7 @@ const Login = () => {
   const [modalShow, setModalShow] = useState(false);
   const { signin, signInWithGoogle, facebookSignIn, gitHunSignIn } =
     useContext(AuthContext);
-  console.log(setError);
+  // console.log(setError);
   //navigate
   const navigate = useNavigate();
   const location = useLocation();

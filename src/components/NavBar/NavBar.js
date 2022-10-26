@@ -9,9 +9,12 @@ import { Image } from "react-bootstrap";
 import { AuthContext } from "../../contexts/UserContext";
 import { toast } from "react-toastify";
 import LeftSideNav from "../Pages/Shared/LeftSideNav/LeftSideNav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const NavBar = ({ switchTheme }) => {
   const { user, logout } = useContext(AuthContext);
+  // console.log(switchTheme);
   // console.log(user);
 
   //navigate
@@ -90,6 +93,9 @@ const NavBar = () => {
                     </>
                   )}
                 </Nav>
+                <span className="theme-toggle" onClick={switchTheme}>
+                  <FontAwesomeIcon icon={faToggleOn} />
+                </span>
                 <div className="d-lg-none">
                   <LeftSideNav></LeftSideNav>
                 </div>

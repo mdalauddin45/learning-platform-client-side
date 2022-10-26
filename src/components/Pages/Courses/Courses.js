@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 
 const Courses = () => {
   const singleCourse = useLoaderData();
-  console.log(singleCourse);
+  //console.log(singleCourse);
   const { description, image, Lecturer, title, category } = singleCourse;
   return (
     <Card className="shadow mt-5">
