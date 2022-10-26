@@ -4,6 +4,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Faq from "../components/FAQ/Faq";
 import Login from "../components/Login/Login";
 import Category from "../components/Pages/Category/Category";
+import CheckOut from "../components/Pages/CheckOut/CheckOut";
 import Courses from "../components/Pages/Courses/Courses";
 import Home from "../components/Pages/Home/Home";
 import Profile from "../components/Pages/Profile/Profile";
@@ -50,6 +51,16 @@ export const router = createBrowserRouter([
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
       { path: "/profile", element: <Profile></Profile> },
+      {
+        path: "/checkout/:id",
+        element: (
+          <PrivateRoute>
+            <CheckOut></CheckOut>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/courses/${params.id}`),
+      },
     ],
   },
 ]);
