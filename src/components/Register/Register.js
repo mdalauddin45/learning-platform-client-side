@@ -111,15 +111,16 @@ const Register = () => {
       });
   };
   return (
-    <div className="d-flex">
-      <div className="d-none d-lg-block ">
+    <div className="d-flex m-5">
+      <div className="d-none d-lg-block m-5">
         <img
           className="m-5"
           src="https://phitron.io/static/media/register.e58071de.png"
           alt=""
+          width="600"
         />
       </div>
-      <div className="border rounded p-3 mt-5 shadow col-md-6">
+      <div className="border rounded p-5 mt-5 shadow col-md-6">
         <div>
           <h1 className="fs-1 text-center">SIGN UP</h1>
           <p className="text-center fs-5">
