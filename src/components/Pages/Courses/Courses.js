@@ -48,7 +48,7 @@ const Courses = () => {
                           onClick={toPdf}
                           className="premium-btn border-0 fs-7"
                         >
-                          Download Pdf
+                          <span> Download Pdf </span>
                           <FontAwesomeIcon icon={faFileArrowDown} />
                         </button>
                       )}
