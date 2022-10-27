@@ -96,9 +96,9 @@ const NavBar = ({ switchTheme }) => {
                       </div>
                     </div>
                   ) : (
-                    <>
+                    <div>
                       <Link to="/login">Login</Link>
-                    </>
+                    </div>
                   )}
                 </Nav>
                 <div>

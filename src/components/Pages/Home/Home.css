@@ -1,0 +1,16 @@
+.homeone {
+  color: #00ab15;
+}
+.home-text {
+  color: rgb(38, 42, 45);
+  font-family: "Poppins", sans-serif;
+}
+.study img {
+  transform: translate3d(0.5px, -13.8px, 0px);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  position: relative;
+  display: block;
+  left: 0px;
+  top: 0px;
+}

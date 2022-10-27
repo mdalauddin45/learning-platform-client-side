@@ -4,6 +4,11 @@ import Pdf from "react-to-pdf";
 import Card from "react-bootstrap/Card";
 import { Col, Container, Row } from "react-bootstrap";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
+import {
+  faChevronRight,
+  faFileArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ref = React.createRef();
 
@@ -30,7 +35,10 @@ const Courses = () => {
                   {" "}
                   <div className="buttons-boxs">
                     <Link className="premium-btn" to={`/checkout/${id}`}>
-                      <span className="fs-7">Get Premium Access</span>
+                      <span className="fs-7">
+                        Get Premium Access{" "}
+                        <FontAwesomeIcon icon={faChevronRight} />{" "}
+                      </span>
                     </Link>
                   </div>
                   <div className="buttons-boxs">
@@ -41,6 +49,7 @@ const Courses = () => {
                           className="premium-btn border-0 fs-7"
                         >
                           Download Pdf
+                          <FontAwesomeIcon icon={faFileArrowDown} />
                         </button>
                       )}
                     </Pdf>
