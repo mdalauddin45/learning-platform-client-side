@@ -25,7 +25,7 @@ const Profile = () => {
             />
           </div>
           <div>
-            <h2 className="mb-1">{user.displayName}</h2>
+            <h2 className="mb-1">{user?.displayName}</h2>
             <p>
               Email Status:
               {user?.emailVerified ? (

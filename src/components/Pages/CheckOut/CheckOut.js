@@ -149,7 +149,7 @@ const CheckOut = () => {
                       <MDBInput
                         className="mb-4 mb-xl-5"
                         label="Name on card"
-                        placeholder={user.displayName}
+                        placeholder={user?.displayName}
                         size="lg"
                       />
                       <MDBInput

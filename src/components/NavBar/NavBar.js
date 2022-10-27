@@ -77,7 +77,7 @@ const NavBar = ({ switchTheme }) => {
                   {user?.photoURL ? (
                     <div className="d-lg-flex">
                       <div>
-                        <Link to="/profile" title={user.displayName}>
+                        <Link to="/profile" title={user?.displayName}>
                           <Image
                             className="m-2"
                             style={{ height: "40px" }}
