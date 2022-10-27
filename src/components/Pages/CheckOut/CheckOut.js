@@ -28,8 +28,11 @@ const CheckOut = () => {
     toast.success("Check Out Successfully");
   };
   return (
-    <section className="h-100 h-custom">
+    <section className="h-100 h-custom ">
       <MDBContainer className="py-5 h-100">
+        <p className="text-center fs-1 fw-bold">
+          <span className="text-success">Welcome!</span> <span>Checkout</span>
+        </p>
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
             <MDBTable responsive>

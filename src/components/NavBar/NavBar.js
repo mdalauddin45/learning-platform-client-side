@@ -10,9 +10,11 @@ import { AuthContext } from "../../contexts/UserContext";
 import { toast } from "react-toastify";
 import LeftSideNav from "../Pages/Shared/LeftSideNav/LeftSideNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
+import { faToggleOff, faToggleOn } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const NavBar = ({ switchTheme }) => {
+  const [dark, setDark] = useState(false);
   const { user, logout } = useContext(AuthContext);
   // console.log(switchTheme);
   // console.log(user);
@@ -99,9 +101,24 @@ const NavBar = ({ switchTheme }) => {
                     </>
                   )}
                 </Nav>
-                <span className="theme-toggle" onClick={switchTheme}>
-                  <FontAwesomeIcon icon={faToggleOn} />
-                </span>
+                <div>
+                  {dark ? (
+                    <span className="theme-toggle" onClick={switchTheme}>
+                      <FontAwesomeIcon
+                        onClick={() => setDark(!dark)}
+                        icon={faToggleOff}
+                      />
+                    </span>
+                  ) : (
+                    <span className="theme-toggle" onClick={switchTheme}>
+                      <FontAwesomeIcon
+                        onClick={() => setDark(!dark)}
+                        icon={faToggleOn}
+                      />
+                    </span>
+                  )}
+                </div>
+
                 <div className="d-lg-none">
                   <LeftSideNav></LeftSideNav>
                 </div>

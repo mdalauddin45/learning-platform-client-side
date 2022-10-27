@@ -14,7 +14,9 @@ const Main = () => {
   return (
     <div>
       <NavBar switchTheme={switchTheme}></NavBar>
-      <Outlet className="app" data-theme={theme}></Outlet>
+      <div className="app" data-theme={theme}>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );

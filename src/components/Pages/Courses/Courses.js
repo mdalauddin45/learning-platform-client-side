@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Pdf from "react-to-pdf";
 import Card from "react-bootstrap/Card";
+import { Col, Container, Row } from "react-bootstrap";
+import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
 
 const ref = React.createRef();
 
@@ -10,36 +12,46 @@ const Courses = () => {
   //console.log(singleCourse);
   const { description, image, Lecturer, title, category, id } = singleCourse;
   return (
-    <>
-      <div className="Post" ref={ref}>
-        <Card className="shadow mt-5">
-          <Card.Img variant="top" src={image} style={{ height: "400px" }} />
-          <Card.Body>
-            <Card.Title className="c-title">{title} </Card.Title>
-            <Card.Text>Lecturer: {Lecturer}</Card.Text>
-            <Card.Text>{category}</Card.Text>
-            <Card.Text>{description}</Card.Text>
-            <div className="d-flex justify-content-between">
-              {" "}
-              <div className="buttons-boxs">
-                <Link className="buttons-box" to={`/checkout/${id}`}>
-                  <span className="fs-5">check Out</span>
-                </Link>
-              </div>
-              <div className="buttons-boxs">
-                <Pdf targetRef={ref} filename="BGC-Tech-Document.pdf">
-                  {({ toPdf }) => (
-                    <button onClick={toPdf} className="buttons-box border-0">
-                      Download Pdf
-                    </button>
-                  )}
-                </Pdf>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </div>
-    </>
+    <Container>
+      <Row>
+        <Col lg="2" className="d-none d-lg-block ">
+          <LeftSideNav></LeftSideNav>
+        </Col>
+        <Col>
+          <div className="Post" ref={ref}>
+            <Card className="shadow mt-4 ">
+              <Card.Img variant="top" src={image} style={{ height: "400px" }} />
+              <Card.Body>
+                <Card.Title className="c-title">{title} </Card.Title>
+                <Card.Text>Lecturer: {Lecturer}</Card.Text>
+                <Card.Text>{category}</Card.Text>
+                <Card.Text>{description}</Card.Text>
+                <div className="d-flex justify-content-between mb-4">
+                  {" "}
+                  <div className="buttons-boxs">
+                    <Link className="premium-btn" to={`/checkout/${id}`}>
+                      <span className="fs-7">Get Premium Access</span>
+                    </Link>
+                  </div>
+                  <div className="buttons-boxs">
+                    <Pdf targetRef={ref} filename="BGC-Tech-Document.pdf">
+                      {({ toPdf }) => (
+                        <button
+                          onClick={toPdf}
+                          className="premium-btn border-0 fs-7"
+                        >
+                          Download Pdf
+                        </button>
+                      )}
+                    </Pdf>
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

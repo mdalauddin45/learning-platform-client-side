@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import "./CourseSummary.css";
@@ -18,7 +17,7 @@ const CourseSummary = ({ course }) => {
           </div>
           <div className="buttons-boxs">
             <Link className="premium-btn" to={`/courses/${id}`}>
-              Get premium access
+              Details
             </Link>
           </div>
         </Card.Body>

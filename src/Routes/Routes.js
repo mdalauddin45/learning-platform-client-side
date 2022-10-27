@@ -37,11 +37,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        element: (
-          <PrivateRoute>
-            <Courses></Courses>
-          </PrivateRoute>
-        ),
+        element: <Courses></Courses>,
         loader: ({ params }) =>
           fetch(`https://server-site-eight.vercel.app/courses/${params.id}`),
       },
