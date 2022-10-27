@@ -1,5 +1,5 @@
+import { Document } from "@react-pdf/renderer";
 import React from "react";
-import { Document } from "react-pdf";
 import Courses from "./Courses";
 
 const PdfFile = () => {
