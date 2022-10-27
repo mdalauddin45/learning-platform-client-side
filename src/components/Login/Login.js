@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -15,6 +14,7 @@ const Login = () => {
   const { signin, signInWithGoogle, facebookSignIn, gitHunSignIn } =
     useContext(AuthContext);
   // console.log(setError);
+
   //navigate
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,7 +36,9 @@ const Login = () => {
         toast.success("log in succesfully");
       })
       .catch((error) => {
-        console.error(error);
+        toast.error(error);
+        toast.error("wrong-password");
+        setError("wrong-password");
       });
   };
 
@@ -100,9 +102,8 @@ const Login = () => {
       </div>
       <div className="row d-flex justify-content-center w-100">
         <div className="border rounded p-3 mt-5 shadow ">
-          <h1 className="fs-1 text-center">Login</h1>
+          <h1 className="fs-1 text-center">SIGN IN</h1>
           <Form onSubmit={handleSubmit}>
-            <Form.Text className="text-danger">{error}</Form.Text>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -121,12 +122,13 @@ const Login = () => {
                 required
               />
             </Form.Group>
+            <p className="text-danger">{error}</p>
             <div className="d-flex justify-content-between">
               <div></div>
               <div></div>
               <div>
                 <button className="premium-btn border-0 rounded" type="submit">
-                  Log in
+                  Sign in
                 </button>
               </div>
               <div>
@@ -139,6 +141,7 @@ const Login = () => {
               </div>
             </div>
           </Form>
+
           <div className="text-center">
             <p>Login with social accounts</p>
           </div>

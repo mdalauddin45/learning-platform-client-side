@@ -121,7 +121,7 @@ const Register = () => {
       </div>
       <div className="border rounded p-3 mt-5 shadow col-md-6">
         <div>
-          <h1 className="fs-1 text-center">Register</h1>
+          <h1 className="fs-1 text-center">SIGN UP</h1>
           <p className="text-center fs-5">
             <span className="text-success">Welcome!</span> Please confirm that
             you are visiting
