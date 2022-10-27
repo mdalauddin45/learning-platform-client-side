@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <Home></Home>,
+        element: <Category></Category>,
         loader: () => fetch(`https://server-site-eight.vercel.app/courses`),
       },
       {
