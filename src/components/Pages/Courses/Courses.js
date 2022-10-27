@@ -21,7 +21,7 @@ const Courses = () => {
           <div className="Post" ref={ref}>
             <Card className="shadow mt-4 ">
               <Card.Img variant="top" src={image} style={{ height: "400px" }} />
-              <Card.Body>
+              <Card.Body className="text-secondary">
                 <Card.Title className="c-title">{title} </Card.Title>
                 <Card.Text>Lecturer: {Lecturer}</Card.Text>
                 <Card.Text>{category}</Card.Text>

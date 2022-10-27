@@ -15,7 +15,7 @@ const LeftSideNav = () => {
   // console.log(categories);
   return (
     <div className="category shadow">
-      <h5>Our Coureses</h5>
+      <h5>Our Coureses {categories?.length}</h5>
       <div className="sidenav-item">
         {categories?.map((category) => (
           <p className="item" key={category.id}>
