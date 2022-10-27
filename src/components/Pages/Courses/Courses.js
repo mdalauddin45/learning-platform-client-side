@@ -31,7 +31,7 @@ const Courses = () => {
                 <Card.Text>Lecturer: {Lecturer}</Card.Text>
                 <Card.Text>{category}</Card.Text>
                 <Card.Text>{description}</Card.Text>
-                <div className="d-flex justify-content-between mb-4">
+                <div className="d-lg-flex d-md-flex  justify-content-between mb-4">
                   {" "}
                   <div className="buttons-boxs">
                     <Link className="premium-btn" to={`/checkout/${id}`}>
