@@ -8,6 +8,7 @@ const ErrorPage = () => {
       <img
         src="https://demo.auburnforest.com/html/bootcamp/bootcamp/images/resource/error.png"
         alt=""
+        width="500"
       />{" "}
       <br />
       <div className="e-btn">

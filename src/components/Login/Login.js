@@ -31,6 +31,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        setError("");
         navigate(from, { replace: true });
         toast.success("log in succesfully");
       })

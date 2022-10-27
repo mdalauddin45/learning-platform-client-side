@@ -95,9 +95,7 @@ const NavBar = ({ switchTheme }) => {
                     </div>
                   ) : (
                     <>
-                      <Link className="text-white" to="/login">
-                        Login
-                      </Link>
+                      <Link to="/login">Login</Link>
                     </>
                   )}
                 </Nav>
