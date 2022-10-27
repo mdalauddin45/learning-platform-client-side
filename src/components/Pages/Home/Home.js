@@ -3,7 +3,12 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBookOpen,
+  faChevronRight,
+  faEarthAmericas,
+  faUserGraduate,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   // console.log(courses);
@@ -64,6 +69,34 @@ const Home = () => {
               <Link to="/" className="buttons-box">
                 Learn More <FontAwesomeIcon icon={faChevronRight} />
               </Link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="text-center m-5 fw-bold ">
+            <h1>Our achievements</h1>
+          </div>
+          <div className="d-lg-flex text-center ">
+            <div className="content shadow rounded me-5 mt-3 ">
+              <span className="student-card">
+                <FontAwesomeIcon icon={faBookOpen} />
+              </span>
+              <h1 className="fw-bold title-tex">Total Course</h1>
+              <span className="fifty">50+</span>
+            </div>
+            <div className="content shadow rounded me-5 mt-3 mb-5">
+              <span className="student-card">
+                <FontAwesomeIcon icon={faUserGraduate} />
+              </span>
+              <h1 className="fw-bold title-tex">Total Student</h1>
+              <span className="fifty">55K+</span>
+            </div>
+            <div className="content shadow rounded me-5 mt-3">
+              <span className="student-card">
+                <FontAwesomeIcon icon={faEarthAmericas} />
+              </span>
+              <h1 className="fw-bold title-tex">Global Position</h1>
+              <span className="fifty">116</span>
             </div>
           </div>
         </div>
