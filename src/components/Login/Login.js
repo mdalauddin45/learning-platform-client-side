@@ -109,6 +109,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="Enter email"
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -117,13 +118,16 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
               />
             </Form.Group>
             <div className="d-flex justify-content-between">
+              <div></div>
+              <div></div>
               <div>
-                <Button variant="primary" type="submit">
+                <button className="premium-btn border-0 rounded" type="submit">
                   Log in
-                </Button>
+                </button>
               </div>
               <div>
                 <button
@@ -178,7 +182,7 @@ const Login = () => {
             <Link
               rel="noopener noreferrer"
               to="/register"
-              className="underline text-gray-100"
+              className="underline text-gray-100 "
             >
               Sign up
             </Link>

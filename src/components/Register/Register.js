@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -134,6 +133,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 placeholder="Enter Your Name"
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -142,6 +142,7 @@ const Register = () => {
                 type="text"
                 name="photoURL"
                 placeholder="Photo URL"
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -150,6 +151,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="Enter email"
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -158,12 +160,15 @@ const Register = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
               />
             </Form.Group>
             <Form.Text className="text-danger">{error}</Form.Text> <br />
-            <Button variant="primary" type="submit">
-              Sign up
-            </Button>
+            <div className="text-center">
+              <button type="submit" className="premium-btn border-0 rounded">
+                Sign up
+              </button>
+            </div>
           </Form>
           <div className="text-center">
             <p>Login with social accounts</p>
