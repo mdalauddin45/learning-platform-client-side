@@ -6,9 +6,9 @@ const ErrorPage = () => {
   return (
     <div className="text-center mt-5">
       <img
+        className="w-100"
         src="https://demo.auburnforest.com/html/bootcamp/bootcamp/images/resource/error.png"
         alt=""
-        width="500"
       />{" "}
       <br />
       <div className="e-btn">
