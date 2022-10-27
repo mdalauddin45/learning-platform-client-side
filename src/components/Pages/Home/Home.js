@@ -47,11 +47,12 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className=" d-lg-flex d-block ">
+        <div className=" d-lg-flex d-block mt-5 mb-5">
           <div className="study">
             <img
               src="https://demo.auburnforest.com/html/bootcamp/bootcamp/images/resource/education.png"
               alt=""
+              width="450"
             />
           </div>
           <div>
