@@ -10,7 +10,7 @@ const Profile = () => {
 
   return (
     <Container>
-      <div className="col-md-6 text-center me-auto m-5 shadow rounded card-hover">
+      <div className="col-md-6 text-center  m-5 shadow rounded card-hover">
         <h1>User profile</h1>
         <div className="card-body text-center  mt-4 mb-4 rounded p-4 ">
           <div>
