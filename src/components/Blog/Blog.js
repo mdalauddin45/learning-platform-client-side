@@ -6,7 +6,7 @@ const Blog = () => {
     <Container>
       <div className="m-5">
         <div className=" rounded p-4 shadow mb-2 mt-3">
-          <h3>What is cors?</h3>
+          <h3>What is cors ?</h3>
           <p>
             CORS is shorthand for Cross-Origin Resource Sharing. It is a
             mechanism to allow or restrict requested resources on a web server
